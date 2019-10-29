@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use App\Events\Category\CategoryCreated;
+use App\Events\Category\CategoryUpdated;
 use App\Events\Category\CategoryRemoved;
 
 class CategoryController extends Controller
