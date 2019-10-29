@@ -1,0 +1,8 @@
+window._each = require('lodash/each')
+window._find = require('lodash/find')
+window._isEmpty = require('lodash/isEmpty')
+window._head = require('lodash/head')
+window._filter = require('lodash/filter')
+window._map = require('lodash/map')
+window._sumBy = require('lodash/sumBy')
+window._sortBy = require('lodash/sortBy')
