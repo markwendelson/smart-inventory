@@ -44165,6 +44165,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/sass/layouts.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/layouts.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/sidebar.scss":
 /*!*************************************!*\
   !*** ./resources/sass/sidebar.scss ***!
@@ -44279,15 +44290,16 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vee_validate__WEBPACK_IMPORTED_MO
 /***/ }),
 
 /***/ 0:
-/*!**********************************************************************************!*\
-  !*** multi ./vue/app.js ./resources/sass/sidebar.scss ./resources/sass/app.scss ***!
-  \**********************************************************************************/
+/*!****************************************************************************************************************!*\
+  !*** multi ./vue/app.js ./resources/sass/sidebar.scss ./resources/sass/app.scss ./resources/sass/layouts.scss ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/wendel/Sites/inventory-system/vue/app.js */"./vue/app.js");
-__webpack_require__(/*! /Users/wendel/Sites/inventory-system/resources/sass/sidebar.scss */"./resources/sass/sidebar.scss");
-module.exports = __webpack_require__(/*! /Users/wendel/Sites/inventory-system/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\smart-inventory\vue\app.js */"./vue/app.js");
+__webpack_require__(/*! C:\laragon\www\smart-inventory\resources\sass\sidebar.scss */"./resources/sass/sidebar.scss");
+__webpack_require__(/*! C:\laragon\www\smart-inventory\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\laragon\www\smart-inventory\resources\sass\layouts.scss */"./resources/sass/layouts.scss");
 
 
 /***/ })

@@ -14,7 +14,7 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -24,7 +24,7 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +35,7 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
