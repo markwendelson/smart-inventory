@@ -21,5 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('management')->name('management.')->group(function () {
     Route::resource('category', 'CategoryController');
+    route::resource('brand','BrandController');
 });
 

@@ -20,4 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix('v1')->name('api.')->group(function () {
     Route::resource('category', 'Api\CategoryController');
     Route::delete('category', 'Api\CategoryController@destroyMultiple')->name('category.destroyMultiple');
+    Route::resource('brand','Api\BrandController');
+    Route::delete('brand','Api\BrandController@destroyMultiple')->name('brand.destroyMultiple');
 });
