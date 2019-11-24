@@ -1,14 +1,14 @@
 @extends('layouts.authenticated')
 
 @section('content')
-<div id="category" class="row justify-content-center content">
+<div id="brand" class="row justify-content-center content">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header form-title">Manage Brand</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-3">
-                            <label for="search_category">Search</label>
+                            <label for="search_brand">Search</label>
                             <input type="text" class="form-control-input ml-2" id="search_brand" name="search_brand" placeholder="Search Brand" v-model="searchValue">
                         </div>
                         <div class="col-md-9">
@@ -30,7 +30,7 @@
                         </thead>
                         <tbody>
                             <template v-if="brand.length">
-                                <tr v-for="(brand, index) in categories" :key="index">
+                                <tr v-for="(brand, index) in brand" :key="index">
                                     <td><input type="checkbox" v-model="brandIds" :value="brand.id" v-on:click="selectedChanged"/></td>
                                     <td>@{{ brand.brand_code }}</td>
                                     <td>@{{ brand.brand_name }}</td>
@@ -109,7 +109,7 @@
                     }).then((result) => {
                         if (result.value) {
                             // remove record from table
-                            // this.categories.splice(index, 1);
+                            // this.brand.splice(index, 1);
 
                             // remove record to database
                             axios.delete('/api/v1/brand/'+brand).then(() => {
@@ -126,11 +126,11 @@
                 },
                 removeSelected() {
 
-                    // return if no selected category
+                    // return if no selected brand
                     if(!this.brandIds.length)
                     return
 
-                    // will continue if has selected category
+                    // will continue if has selected brand
                     var app = this
 
                     Swal.fire({
@@ -145,10 +145,10 @@
                         if (result.value) {
 
                             // iterate selected ids then remove in collection
-                            // app.categoryIds.forEach((id) => {
-                            //     for(var i = 0; i < app.categories.length; i++) {
-                            //         if(app.categories[i].id === id) {
-                            //             app.categories.splice(i, 1);
+                            // app.brandIds.forEach((id) => {
+                            //     for(var i = 0; i < app.brand.length; i++) {
+                            //         if(app.brand[i].id === id) {
+                            //             app.brand.splice(i, 1);
                             //         }
                             //     }
                             // });
@@ -170,7 +170,7 @@
                         }
                     })
                 },
-                categorySearch() {
+                brandSearch() {
                     var app = this
                     app.isLoading = true
                     return axios.get(`/api/v1/brand?q=`+app.searchValue)
@@ -194,17 +194,17 @@
 
                     Echo.channel('brandCreated').listen('.brand-created', (e) => {
                         if(!this.searchValue)
-                        this.categories.push(e.category);
+                        this.brand.push(e.brand);
                     });
 
                     Echo.channel('brandUpdated').listen('.brand-updated', (e) => {
                         if(!this.searchValue)
-                        this.fetchCategory();
+                        this.fetchBrand();
                     });
 
                     Echo.channel('brandRemoved').listen('.brand-removed', (e) => {
                         if(!this.searchValue)
-                        this.fetchCategory();
+                        this.fetchBrand();
                     });
                 },
                 selectedChanged() {
@@ -218,7 +218,7 @@
             },
             watch: {
                 searchValue() {
-                    this.categorySearch()
+                    this.brandSearch()
                 }
             }
     })
